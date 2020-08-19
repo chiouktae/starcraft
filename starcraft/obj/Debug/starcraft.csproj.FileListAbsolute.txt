@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\starcraft\starcraft\bin\Debug\starcraft.exe.config
+C:\Users\Admin\source\repos\starcraft\starcraft\bin\Debug\starcraft.exe
+C:\Users\Admin\source\repos\starcraft\starcraft\bin\Debug\starcraft.pdb
+C:\Users\Admin\source\repos\starcraft\starcraft\obj\Debug\starcraft.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\starcraft\starcraft\obj\Debug\starcraft.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\starcraft\starcraft\obj\Debug\starcraft.exe
+C:\Users\Admin\source\repos\starcraft\starcraft\obj\Debug\starcraft.pdb
