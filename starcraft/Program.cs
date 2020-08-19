@@ -28,7 +28,7 @@ namespace starcraft
             Unit a1 = new Arbirter();
             a1.TakeDamage(150);
             Console.WriteLine(a1);
-            UseSpecialAbility((ISpecialUnit)a1, 3);
+            UseSpecialAbility((ISpecialUnit)a1, 1);
         }
        
         private static void LetDance(Unit unit) // overloading

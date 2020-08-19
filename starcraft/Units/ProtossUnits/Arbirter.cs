@@ -1,4 +1,6 @@
-﻿namespace starcraft.Units.ProtossUnits
+﻿using System;
+
+namespace starcraft.Units.ProtossUnits
 {
     class Arbirter : ProtossUnit, ISpecialUnit
     {
@@ -13,7 +15,8 @@
 
         public void UseSpecialAbility()
         {
-            System.Console.WriteLine("으아아 미안해요");
+            Move(10, 20);
+            Console.WriteLine($"순간이동!X={X},Y={Y}");
         }
     }
 }
