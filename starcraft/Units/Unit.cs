@@ -23,6 +23,12 @@
             X = x;
             Y = y;
         }
+        //todo : 범위탐색 구현
+        public Unit[] LocationSearch(int x, int y,int r)
+        {
+            Unit[] units = { };
+            return units;
+        }
 
         public Unit()
         {
