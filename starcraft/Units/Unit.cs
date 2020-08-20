@@ -1,4 +1,6 @@
-﻿namespace starcraft.Units
+﻿using System;
+
+namespace starcraft.Units
 {
     abstract class Unit
     {
@@ -27,6 +29,7 @@
         public Unit[] LocationSearch(int x, int y,int r)
         {
             Unit[] units = { };
+            //모르게따
             return units;
         }
 
@@ -66,6 +69,17 @@
         protected abstract string UnitName
         {
             get;
+        }
+
+        /// <summary>
+        /// 특정 좌표로부터의 거리를 구한다.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public double GetDistanceFrom(int x, int y)
+        {
+            return (double)Math.Sqrt(Math.Pow(X - x, 2) + Math.Pow(Y - y, 2));
         }
     }
 }
