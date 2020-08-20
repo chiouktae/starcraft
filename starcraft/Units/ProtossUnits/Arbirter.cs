@@ -2,7 +2,7 @@
 
 namespace starcraft.Units.ProtossUnits
 {
-    class Arbirter : ProtossUnit, ISpecialUnit
+    class Arbirter : ProtossUnit
     {
         public Arbirter()
         {
@@ -15,13 +15,15 @@ namespace starcraft.Units.ProtossUnits
 
         protected override string UnitName => "Arbirter";
 
-        public void UseSpecialAbility()
+        public void Recall(int x,int y)
         {
-            foreach (Unit unit in LocationSearch(10, 10, 10))
+            foreach (Unit unit in UnitManager.Instance.GetUnitsInRange(10, 10, 10))
             {
                 unit.Move(X, Y);
+                Console.WriteLine($"{unit.GetUnitName()}순간이동!X={X},Y={Y}");
             }
-            Console.WriteLine($"순간이동!X={X},Y={Y}");
         }
+
+        
     }
 }

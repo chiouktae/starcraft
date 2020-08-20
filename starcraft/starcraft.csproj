@@ -46,6 +46,7 @@
     <Compile Include="ISpecialUnit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitManager.cs" />
     <Compile Include="Units\ProtossUnits\Arbirter.cs" />
     <Compile Include="Units\ProtossUnits\Dragoon.cs" />
     <Compile Include="Units\ProtossUnits\ProtossUnit.cs" />

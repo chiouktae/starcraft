@@ -25,13 +25,7 @@ namespace starcraft.Units
             X = x;
             Y = y;
         }
-        //todo : 범위탐색 구현
-        public Unit[] LocationSearch(int x, int y,int r)
-        {
-            Unit[] units = { };
-            //모르게따
-            return units;
-        }
+        
 
         public Unit()
         {
@@ -69,6 +63,11 @@ namespace starcraft.Units
         protected abstract string UnitName
         {
             get;
+        }
+
+        public string GetUnitName()
+        {
+            return UnitName;
         }
 
         /// <summary>
