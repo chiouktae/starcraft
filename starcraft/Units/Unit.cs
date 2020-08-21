@@ -25,12 +25,19 @@ namespace starcraft.Units
             X = x;
             Y = y;
         }
+        public void Recalled(int x, int y)
+        {
+            X = x;
+            Y = y;
+            On_Recall(X, Y);
+        }
         
 
         public Unit()
         {
             HP = 50;
-            MP = 250;
+            MP = 0;
+            UnitManager.Instance.Add(this);
         }
 
         public int HP { get; protected set; }
@@ -46,12 +53,17 @@ namespace starcraft.Units
 
         public int MP { get; protected set; }
 
-        public virtual void UseMagicPower(int skillmana)
+        public virtual bool UseMagicPower(int skillmana)
         {
-            while (skillmana > 0 && MP > 0)
+            if(MP >= skillmana)
             {
-                skillmana--;
-                MP--;
+                MP -= skillmana;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No Mana");
+                return false;
             }
         }
 
@@ -80,5 +92,49 @@ namespace starcraft.Units
         {
             return (double)Math.Sqrt(Math.Pow(X - x, 2) + Math.Pow(Y - y, 2));
         }
+
+
+
+        #region _Recall event things for C# 3.0
+        public event EventHandler<_RecallEventArgs> _Recall;
+
+        protected virtual void On_Recall(_RecallEventArgs e)
+        {
+            if (_Recall != null)
+                _Recall(this, e);
+        }
+
+        private _RecallEventArgs On_Recall(int x, int y)
+        {
+            _RecallEventArgs args = new _RecallEventArgs(x, y);
+            On_Recall(args);
+
+            return args;
+        }
+
+        private _RecallEventArgs On_RecallForOut()
+        {
+            _RecallEventArgs args = new _RecallEventArgs();
+            On_Recall(args);
+
+            return args;
+        }
+
+        public class _RecallEventArgs : EventArgs
+        {
+            public int X { get; set; }
+            public int Y { get; set; }
+
+            public _RecallEventArgs()
+            {
+            }
+
+            public _RecallEventArgs(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+        }
+        #endregion
     }
 }
